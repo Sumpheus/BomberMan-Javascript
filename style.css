@@ -1,15 +1,20 @@
 *{
-    
+
 }
 
 body{
     max-height: 100%;
+     background-image: url('Arts/Forestback.png');
 }
 
-#container{
+body{
+    font-family: 'Press Start 2P', cursive;
+    color: snow;
 
 }
 
+
+/*Terrain de jeu*/
 #field{
     border: 2px solid blue;
     height: 800px;
@@ -19,6 +24,8 @@ body{
     position: relative;
 }
 
+
+/*Pion de jeu*/
 #pion{
     position: absolute;
     height: 40px;
@@ -29,7 +36,8 @@ body{
     animation-name: turntest;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-    
+    z-index: 100;
+
 }
 
 @keyframes turntest{
@@ -39,3 +47,6 @@ from {
 to {
     transform: rotate3d(-10, 10, 0.5, 3rad);
     }}
+
+
+/*Enemies*/

@@ -1,0 +1,21 @@
+Cahier des charges
+
+
+	1er screen:
+
+Présentation du jeu, règles etc...
+Posibiltés de mettre son nom...
+
+
+	2ème screen:
+
+Panneau de score lié au nom choisie par le joueurs.
+Panneau montrant le nombre d'ennemies restant.
+Et la difficulté choisie.
+
+	étapes:
+
+Placer et créer des pièges aléatoire.
+Placer (dans les coins du terrain) et créer de enemies pouvant se déplacer.
+Carées vert = enemies.
+Carées gris = pièges.

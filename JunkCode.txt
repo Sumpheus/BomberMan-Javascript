@@ -1,17 +1,9 @@
 //Tentatives N°1 liens clavier|fonction js//
 
-function getKeyAndMove(e){				
-    var key_code=e.which||e.keyCode;
-        switch(key_code){
-            case 37: left();
-				break;
-            case 38: up();
-				break;
-            case 39: right();
-                break;
-            case 40: down();
-				break;
-                }}
+if (x < 0) x = 0;
+    if (y < 0) y = 0;
+    if (x > 760) x = 760;
+    if (y > 760) y = 760;
 
 
 // Fonctions déplacement // 
@@ -45,3 +37,114 @@ function moves(){
 		if (event.keyCode == 38) up(); 
 		if (event.keyCode == 40) down();
 }
+
+
+animated SpriteSheet
+
+
+#pion{
+    position: absolute;
+    height: 50px;
+    width: calc(1491px / 6);
+    background:url('SpriteSheet/stilldown.png');
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animate 1s steps(6) infinite;
+
+}
+
+@keyframes animate
+{
+    from{
+        background-position: 0;
+        
+    }to {
+        background-position: 1491px;
+    }
+}
+
+#pion{
+    position: absolute;
+    height: 58px;
+    width: calc(104px / 3);
+    background:url('SpriteSheet/stilldown.png');
+    left: 50%;
+    top: 50%;
+    transform: translate();
+    animation: animate 1s steps(3) infinite;
+
+}
+
+@keyframes animate
+{
+    from{
+        background-position: 0;
+        
+    }to {
+        background-position: 104px;
+    }
+}
+
+
+
+
+
+TUNCAY'S CODE
+
+
+
+const H_GRID = 24;
+const V_GRID = 16;
+const GRID_SIZE = 40;
+const WINDOW_WIDTH = H_GRID * GRID_SIZE;
+const WINDOW_WIDTH = V_GRID * GRID_SIZE;
+var field = document.getElementById('field');
+field.style.width = WINDOW_WIDTH;
+field.style.height = WINDOW_WIDTH;
+
+
+var blockGrid = [];
+for(var i = 0; i < H_GRID; i++){
+    blockgrid.push([]);
+    for(var j = 0; j < V_GRID; j++){
+        var block = document.createElement('div');
+        block.style.width = '40px';
+        block.style.height = '40px';
+        block.style.display = 'flex';
+        block.style.position = 'absolute';
+        block.style.backgroundColor = 'green';
+        block.style.marginLeft = (i * GRID_SIZE).toString()+'px';
+        block.style.marginTop = (j * GRID_SIZE).toString()+'px';
+
+
+document.getElementById('field').appendChild(block);
+        blockgrid[i].push(block);
+    }
+}
+
+    blockgrid[10][10].style.backgroundColor='black';
+
+
+
+FONCTION POUR NOMBRE AU HASARD ENTRE DEUX VALEURS
+
+
+function entierAleatoire(min, max)
+{
+ return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+//Utilisation
+//La variable contient un nombre aléatoire compris entre 1 et 10
+var entier = entierAleatoire(1, 10);
+
+
+var villain = document.createElement("div");
+    villain.style.width = '40px';
+    villain.style.height = '40px';
+    villain.style.display = 'flex';
+    villain.style.posiotion = 'absolute';
+    villain.style.backgroundColor = 'lawngreen';
+
+document.getElementById("field").appendChild(villain);
+    blockGrid[i++].push(villain); 

@@ -15,6 +15,7 @@ var pion = document.getElementById('pion'),
   y = pion.offsetTop;
 
 
+
 var blockGrid = [];
 for(var i = 0; i < H_GRID; i++){
   blockGrid.push([]);
@@ -26,13 +27,14 @@ for(var i = 0; i < H_GRID; i++){
     block.style.position = "absolute";
 
     if (random100() > 85){
-      block.style.backgroundColor = "blue";
+      block.style.backgroundColor = "";
+      block.style.backgroundImage = "url(Arts/Wall.png)"    
       block.traverser = false;
     }
     
     else if (random100() > 70){
-      block.style.backgroundColor = "green";
-      block.style.backgroundImage = "url('Arts/Stones.png')";   
+      block.style.backgroundColor = "";
+      block.style.backgroundImage = "url(Arts/Rock.png)";   
       block.traverser = false;    
     }
       
@@ -88,7 +90,7 @@ blockGrid[x][y].traverser = false;
 
   vilainListe.push(vilain)
 }
-//blockGrid[10][10].style.backgroundColor = "blue";
+blockGrid[10][10].style.backgroundImage = "url(Arts/Diamond.gif)";
 
 var frame = 0;
 
@@ -165,8 +167,7 @@ window.requestAnimationFrame(loop);
 
 
 
-
-
+  
 //blockGrid[10][10].style.backgroundColor = "green";
 
 document.onkeydown = function(event){
