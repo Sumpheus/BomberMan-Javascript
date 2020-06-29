@@ -19,3 +19,7 @@ Placer et créer des pièges aléatoire.
 Placer (dans les coins du terrain) et créer de enemies pouvant se déplacer.
 Carées vert = enemies.
 Carées gris = pièges.
+
+    Bombes:
+    
+Placer les bombes sur l'emplacement du perso.

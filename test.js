@@ -54,8 +54,7 @@ for(var i = 0; i < H_GRID; i++){
 
 
 
-
-
+//enemies//
 
 var vilainListe = []
 for (var i = 0; i < 10; i++) {
@@ -90,6 +89,9 @@ blockGrid[x][y].traverser = false;
 
   vilainListe.push(vilain)
 }
+
+
+//Diamant = pièges et bonus(peut apparaitre lors de la destruction de murs)//
 blockGrid[10][10].style.backgroundImage = "url(Arts/Diamond.gif)";
 
 var frame = 0;
@@ -115,7 +117,7 @@ function loop() {
           break;
 
         case "up":
-          console.log(vilainY)
+          console.log()
           if (vilainY < V_GRID - 1 && blockGrid[vilainX][vilainY + 1].traverser)
 
             vilainY++;
@@ -164,11 +166,32 @@ function loop() {
 window.requestAnimationFrame(loop);
 
 
+//Bombes//
+
+document.body.onkeyup = function(e){
+    if(e.keyCode === 87){
+    var bombe = document.createElement('div');
+    bombe.style.position = 'absolute';
+    bombe.style.width = '40px';
+    bombe.style.height = '40px';
+    bombe.style.backgroundImage = 'url(SpriteSheet/Bombs/Bomb.gif)';
+    bombe.style.backgroundSize = "contain";
+    bombe.style.display = 'flex';
+    console.log(pion.offsetLeft);
+    console.log(pion.offsetTop);   
+    bombe.style.left = String(pion.offsetLeft) + "px";
+    bombe.style.top = String(pion.offsetTop) + "px";
+    plateau.appendChild(bombe);
+    var audio = new Audio('Audio/TickingBomb.mp3');
+    audio.play();
+    setTimeout(function eclat(){
+    plateau.removeChild(bombe);
+    var audio = new Audio('Audio/KaBoom.mp3');
+    audio.play();},2050);   
+    }
+}
 
 
-
-  
-//blockGrid[10][10].style.backgroundColor = "green";
 
 document.onkeydown = function(event){
   var event = event || window.event,
