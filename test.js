@@ -28,7 +28,7 @@ for(var i = 0; i < H_GRID; i++){
 
     if (random100() > 85){
       block.style.backgroundColor = "";
-      block.style.backgroundImage = "url(Arts/Wall.png)"    
+      block.style.backgroundImage = "url(Arts/Wall.png)";    
       block.traverser = false;
     }
     
@@ -51,8 +51,6 @@ for(var i = 0; i < H_GRID; i++){
           
   }  
 }
-
-
 
 //enemies//
 
@@ -83,7 +81,6 @@ blockGrid[x][y].traverser = false;
   vilain.style.top = String(vilain.vilainY * GRID_SIZE) + "px";
   vilain.style.zIndex = "95";
   plateau.appendChild(vilain);
-
 
 
 
@@ -167,6 +164,8 @@ window.requestAnimationFrame(loop);
 
 
 //Bombes//
+    
+
 
 document.body.onkeyup = function(e){
     if(e.keyCode === 87){
@@ -174,9 +173,10 @@ document.body.onkeyup = function(e){
     bombe.style.position = 'absolute';
     bombe.style.width = '40px';
     bombe.style.height = '40px';
-    bombe.style.backgroundImage = 'url(SpriteSheet/Bombs/Bomb.gif)';
+    bombe.style.backgroundImage = 'url(SpriteSheet/Bombs/Bomb.gif)';    
     bombe.style.backgroundSize = "contain";
     bombe.style.display = 'flex';
+    bombe.traverser = false;
     console.log(pion.offsetLeft);
     console.log(pion.offsetTop);   
     bombe.style.left = String(pion.offsetLeft) + "px";
@@ -184,14 +184,37 @@ document.body.onkeyup = function(e){
     plateau.appendChild(bombe);
     var audio = new Audio('Audio/TickingBomb.mp3');
     audio.play();
-    setTimeout(function eclat(){
+    setTimeout(function eclat() {
+    var explofire = document.createElement('div');
+    explofire.style.height = '40px';
+    explofire.style.width = '40px';
+    explofire.style.backgroundImage = 'url(Arts/explofire.gif)';
+    explofire.style.position = 'absolute';
+    explofire.style.backgroundSize = 'contain';
+    explofire.style.display = 'flex';
+    explofire.style.left = String(bombe.offsetLeft) + 'px';
+    explofire.style.top = String(bombe.offsetTop) + 'px';        
     plateau.removeChild(bombe);
     var audio = new Audio('Audio/KaBoom.mp3');
-    audio.play();},2050);   
-    }
+    audio.play();
+    plateau.appendChild(explofire);
+    setTimeout(function afterblow(){
+    var vide = document.createElement('div');    
+        vide.style.height = '40px';
+        vide.style.width = '40px';
+        vide.style.backgroundImage = '';
+        vide.style.position = 'absolute';
+        vide.style.backgroundSize = 'contain';
+        vide.style.display = 'flex';
+        vide.style.left = String(bombe.offsetLeft) + 'px';
+        vide.style.top = String(bombe.offsetTop) + 'px';
+    plateau.removeChild(explofire);    
+    plateau.appendChild(vide);    
+    },2050);            
+    },2050);
+    }    
 }
-
-
+    
 
 document.onkeydown = function(event){
   var event = event || window.event,

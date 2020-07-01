@@ -148,3 +148,18 @@ var villain = document.createElement("div");
 
 document.getElementById("field").appendChild(villain);
     blockGrid[i++].push(villain); 
+    
+    
+setTimeout(function afterblow(){
+    var vide = document.createElement('div');    
+        vide.style.height = '40px';
+        vide.style.width = '40px';
+        vide.style.backgroundImage = 'url(tree.png)';
+        vide.style.position = 'absolute';
+        vide.style.backgroundSize = 'contain';
+        vide.style.display = 'flex';
+        vide.style.left = String(bombe.offsetLeft) + 'px';
+        vide.style.top = String(bombe.offsetTop) + 'px';
+    plateau.removeChild(explofire);    
+    plateau.appendChild(vide);    
+    },3000);            
