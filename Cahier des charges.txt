@@ -16,10 +16,15 @@ Et la difficulté choisie.
 	étapes:
 
 Placer et créer des pièges aléatoire.
-Placer (dans les coins du terrain) et créer de enemies pouvant se déplacer.
-Carées vert = enemies.
-Carées gris = pièges.
+Placer (dans les coins du terrain) et créer des enemies pouvant se déplacer.
+
 
     Bombes:
-    
-Placer les bombes sur l'emplacement du perso.
+
+-Placer les bombes sur l'emplacement du perso.
+
+Les bombes détruisent les blocks qui les entourent.
+
+Explosion dans 4 directions d'une case (normale).
+Explosion dans 8 directions de 2 cases (Boost).
+Explosion dans 8 directions de 5 cases pouvant faire exploser les murs solides, fesant le bruit d'une bombe qui aurait l'équivalent d'une bombe H (Aplha Boost).
